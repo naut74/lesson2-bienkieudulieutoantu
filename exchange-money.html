@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert</title>
+    <style>
+        .container{
+            padding: 20px;
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .text-top{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            ;
+        }
+        .text-bot{
+            padding: 12px;
+            margin-top: 45px;
+            ;
+        }
+    </style>
+</head>
+<body>
+    <!-- <table>
+        <tr>
+            <th><label for="Amount">Amount</label></th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="Amount"></td>
+            <td>
+                <select id="From">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="To">
+                    <option value="VND">VND</option>
+                    <option  value="USD">USD</option>
+                </select>
+            </td>
+            <td><button onclick="ChangeMoney()">Convert</button></td>
+        </tr>            
+    </table>
+    
+    <br>
+    <p id="Result"></p> -->
+
+    <div class="container">
+        <div class="text-top">
+            <p for="money">Amount</p>
+            <input type="number" id="money">
+        </div>
+        <div class="text-top">
+            <p for="from">From Currency</p>
+            <select name="from" id="From">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div class="text-top">
+            <p for="to">To Currency</p>
+            <select name="to" id="To">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        
+        <div class="text-bot">
+            <button onclick="ChangeMoney()">Convert</button>
+        </div>
+        
+    </div>
+    <p id="Result" style="padding: 20px;"></p>
+
+    
+    <script>
+        function ChangeMoney() {
+    let Amount = document.getElementById("money").value;
+    let FromC = document.getElementById("From").value;
+    let To = document.getElementById("To").value;
+    let Result;
+
+
+    if (FromC == "USD" && To == "VND") {
+        Result = "Result: " + (Amount * 23000) + " Đ";
+    }
+    else if (FromC == "VND"&& To =="USD"){
+        Result = "Result: "+ (Amount / 23000) + " $";
+    }
+    else if (FromC == "VND") {
+        Result = "Result: " + Amount + " Đ"
+    } else {
+        Result = "Result: " + Amount + " $"
+    }
+        
+    document.getElementById("Result").innerHTML = Result;
+}
+
+    </script>
+</body>
+</html>
+
