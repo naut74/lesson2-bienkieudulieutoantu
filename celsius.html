@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius</title>
+</head>
+<body>
+    <input type="number" name="c" id="c" placeholder="Celsius">
+    <button type="button" onclick="change()">Change to F</button>
+    <p id="result"></p>
+    <script>
+        function change(){
+            let C=document.getElementById('c').value;
+            let F=(C*9)/5+32;
+
+            document.getElementById('result').innerHTML="Result: "+F;
+        }
+    </script>
+</body>
+</html>
